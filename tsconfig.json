@@ -1,4 +1,5 @@
 {
+  "extends": "./base-tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -7,6 +8,7 @@
       "esnext"
     ],
     "allowJs": true,
+    "noEmitOnError": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -18,9 +20,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "."
   },
   "include": [
-    "src"
+    "./src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
