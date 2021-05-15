@@ -1,12 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { Routes } from './main/routes'
+import { theme } from './ui/styles'
+import { ChakraProvider } from '@chakra-ui/react'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routes />
+    <ChakraProvider resetCSS theme={theme}>
+      <Routes />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 )
