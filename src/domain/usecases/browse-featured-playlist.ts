@@ -1,9 +1,13 @@
-import { Spotify } from '../spotify'
+import { FeaturedPlaylists } from '../entities/FeaturedPlaylist'
+import { PlaylistsRepository } from '../repositories/PlaylistsRepository'
+import { UseCase } from '../../core/domain/UseCase'
 
-export interface BrowseFeaturedPlaylists {
-  load(): Promise<BrowseFeaturedPlaylists.Model>
-}
+type Response = FeaturedPlaylists
 
-export namespace BrowseFeaturedPlaylists {
-  export type Model = Spotify.Browse.FeaturedPlaylists
+export class BrowseFeaturedPlaylists implements UseCase<null, Promise<Response>> {
+  constructor(private readonly playlistsRepository: PlaylistsRepository) {}
+  async execute(): Promise<Response> {
+    const featuredPlaylists = await this.playlistsRepository.browseFeaturedPlaylists()
+    return featuredPlaylists
+  }
 }

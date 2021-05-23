@@ -1,5 +1,5 @@
-import { FetchHttpClient } from '@/infra/protocols/http'
-import { MockHttpClient } from '@/infra/protocols/http/mock-http-client'
+import { FetchHttpClient } from '@/infra/http'
+import { MockHttpClient } from '@/infra/http/mock-http-client'
 
 export const makeHttpClient = <T>() => {
   // Based on environment return mocked server or FetchHttpClient

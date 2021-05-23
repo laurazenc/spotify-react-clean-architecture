@@ -1,10 +1,9 @@
 import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
 import { useHome } from './useHome'
-import { BrowseFeaturedPlaylistsUseCase } from '@/data/usecases'
 
 export interface HomeProps {
-  browseFeaturedPlaylists: BrowseFeaturedPlaylistsUseCase
+  browseFeaturedPlaylists: any
 }
 
 export const Home: React.FunctionComponent<HomeProps> = props => {

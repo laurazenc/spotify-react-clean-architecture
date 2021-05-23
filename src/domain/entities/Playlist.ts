@@ -1,4 +1,4 @@
-interface Playlists {
+export interface Playlist {
   href: string
   // items: Item[]
   items: any[]
@@ -7,9 +7,4 @@ interface Playlists {
   offset: number
   previous?: string | null
   total: number
-}
-
-export interface FeaturedPlaylists {
-  message: string
-  playlists: Playlists
 }

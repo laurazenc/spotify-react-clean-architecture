@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import { Routes } from './main/routes'
-import { theme } from './ui/styles'
+import { theme } from './presentation/styles'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 

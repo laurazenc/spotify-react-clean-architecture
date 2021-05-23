@@ -1,4 +1,4 @@
-import { HttpClient } from '@/data/protocols/http/http-client'
+import { HttpClient } from '@/data/protocols/http'
 
 export class FetchHttpClient<T> implements HttpClient<T> {
   async request<BodyType>({

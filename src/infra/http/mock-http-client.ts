@@ -1,5 +1,5 @@
 import { getMockedResponse } from '@/data/mock'
-import { HttpClient } from '@/data/protocols/http/http-client'
+import { HttpClient } from '@/data/protocols/http'
 
 export class MockHttpClient<T> implements HttpClient<T> {
   async request<BodyType>({ url }: HttpClient.Params<BodyType>): Promise<HttpClient.HttpResponse<T>> {

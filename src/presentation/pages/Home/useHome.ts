@@ -1,15 +1,15 @@
-import { FeaturedPlaylists } from '@/domain/spotify/browse/featured-playlists'
+import { FeaturedPlaylists } from '@/domain/entities/FeaturedPlaylist'
 import { useEffect, useState } from 'react'
 import { HomeProps } from '.'
 
 export function useHome({ browseFeaturedPlaylists }: HomeProps): Record<string, any> {
   const [featuredPlaylists, setFeaturedPlaylists] = useState<FeaturedPlaylists>()
-
   useEffect(() => {
-    browseFeaturedPlaylists.load().then((responseFeaturedPlaylists: FeaturedPlaylists) => {
+    browseFeaturedPlaylists.execute().then((responseFeaturedPlaylists: FeaturedPlaylists) => {
       setFeaturedPlaylists(responseFeaturedPlaylists)
     })
   }, [])
+  console.log({ featuredPlaylists })
 
   return {
     featuredPlaylists,
