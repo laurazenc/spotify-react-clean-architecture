@@ -1,1 +1,1 @@
-export * from './browse-featured-playlist'
+export * from './BrowseFeaturedPlaylist.usecase'

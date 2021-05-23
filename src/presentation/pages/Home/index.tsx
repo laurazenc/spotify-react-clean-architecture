@@ -1,15 +1,15 @@
 import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
 import { useHome } from './useHome'
+import { BrowseFeaturedPlaylistsUseCase } from '@/domain'
 
 export interface HomeProps {
-  browseFeaturedPlaylists: any
+  browseFeaturedPlaylists: BrowseFeaturedPlaylistsUseCase
 }
 
 export const Home: React.FunctionComponent<HomeProps> = props => {
   const { featuredPlaylists } = useHome(props)
-  console.log(featuredPlaylists)
-
+  if (!featuredPlaylists) return <div>Loading...</div>
   return (
     <>
       <Box
@@ -22,7 +22,7 @@ export const Home: React.FunctionComponent<HomeProps> = props => {
         width={350}
       >
         <Text textAlign="center" color="white" fontSize="2xl" fontWeight="bold">
-          The home page
+          {featuredPlaylists.message}
         </Text>
       </Box>
     </>

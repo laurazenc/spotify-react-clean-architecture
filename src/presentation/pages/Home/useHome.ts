@@ -1,4 +1,4 @@
-import { FeaturedPlaylists } from '@/domain/entities/FeaturedPlaylist'
+import { FeaturedPlaylists } from '@/domain/entities/FeaturedPlaylist.entity'
 import { useEffect, useState } from 'react'
 import { HomeProps } from '.'
 
@@ -9,7 +9,6 @@ export function useHome({ browseFeaturedPlaylists }: HomeProps): Record<string, 
       setFeaturedPlaylists(responseFeaturedPlaylists)
     })
   }, [])
-  console.log({ featuredPlaylists })
 
   return {
     featuredPlaylists,
